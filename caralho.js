@@ -3,34 +3,23 @@ var vm = function () {
     self.farmers = ko.observableArray([]);
     self.uniqueProducts = ko.observableArray([]);
     self.all_products = ko.observableArray([
-      "Maçãs", 
-      "Tomates", 
-      "Morangos", 
-      "Cenouras", 
-      "Batatas",
-      "Abóboras", 
-      "Melões", 
-      "Milho", 
-      "Uvas Chardonnay", 
-      "Uvas Merlot",
-      "Uvas Cabernet Sauvignon", 
-      "Uvas de Mesa", 
-      "Barris de Vinho",
-      "Espinafre Orgânico", 
-      "Couve", 
-      "Alface", 
-      "Rabanetes", 
-      "Pepinos",
-      "Laranjas", 
-      "Limões", 
-      "Toranjas", 
-      "Tangerinas", 
-      "Laranjas Vermelhas",
-      "Lavanda", 
-      "Margaridas", 
-      "Tulipas", 
-      "Cravos"
-   ]);
+      {"name": "Maçãs", "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/280px-Red_Apple.jpg"},
+      {"name": "Tomates", "link": "https://tomatesdooeste.pt/images/tomate2.png"},
+      {"name": "Morangos", "link": "https://fruteveg.pt/cdn/shop/products/morango_grande.jpg?v=1614794190"},
+      {"name": "Cenouras", "link": "https://pecadefruta.com/wp-content/uploads/2020/10/Cenoura-1.jpg"},
+      {"name": "Batatas", "link": "https://www.liderfrutas.com/images/products/411558117924.jpg"},
+      {"name": "Abóboras", "link": "https://www.nfrutas.com/cdn/shop/products/abobora_18990_l.jpg?v=1589479591"},
+      {"name": "Melões", "link": "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/6510bf60175e9443f373de7c96877a52.jpg"},
+      {"name": "Milho", "link": "https://nutrinews.com/wp-content/uploads/2020/10/milho-aves.jpg"},
+      {"name": "Uvas Chardonnay", "link": "https://revistaadega.uol.com.br/media/chardonnay_franca.png"},
+      {"name": "Uvas Merlot", "link": "https://cdn.dooca.store/624/posts/merlot.jpg"},
+      {"name": "Uvas Cabernet Sauvignon", "link": "https://revistaadega.uol.com.br/media/uploads/cabernet-sauvignon-03_medium.jpg"},
+      {"name": "Uvas de Mesa", "link": "https://m.planfor.pt/Donnees_Site/Produit/Images/7834/videira-de-uva-de-mesa-rosa_PT_500_0023324.jpg"},
+      {"name": "Barris de Vinho", "link": "https://lojadosbarris.com/imagens/produtos/big_1588082761.jpg"},
+      {"name": "Espinafre Orgânico", "link": "https://assets.vtex.app/unsafe/1020x930/center/middle/https%3A%2F%2Fcarrefourbrfood.vtexassets.com%2Farquivos%2Fids%2F22855732%2Fespinafre-organico-direto-da-serra-unidade-1.jpg%3Fv%3D1775747533"},
+      {"name": "Couve", "link": "https://cdn.awsli.com.br/600x450/1304/1304130/produto/51576994/67281a95eb.jpg"},
+      {"name": "Alface", "link": "https://th.bing.com/th/id/OIP.ccW3KlOsX6z5RCA4BC3aAQAAAA?rs=1&pid=ImgDetMain"},
+    ]);
     // Replace this data with your actual farmer data
     self.farmers = [
       {
