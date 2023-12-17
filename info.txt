@@ -1,0 +1,129 @@
+https://img.freepik.com/premium-photo/agriculture-farmer-background_519183-4463.jpg
+https://th.bing.com/th/id/OIP.mpAeM6DNRm9I9I7IBtGyBgHaE8?w=612&h=408&rs=1&pid=ImgDetMain
+https://th.bing.com/th/id/OIP.IijlI6jYTodzJIDERtOUXAHaFj?w=1024&h=768&rs=1&pid=ImgDetMain
+https://th.bing.com/th/id/OIP.KjM6dnHodWEJQmmfJw5OqQHaE7?rs=1&pid=ImgDetMain
+https://asa.crs.org/wp-content/uploads/2019/10/1-1024x682.jpg
+https://blogdomax.net/uploads/2019/05/20/15/posts/10614.jpg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+    "farmers": [
+      {
+        "name": "Eva Greenfield",
+        "products": [
+          {
+            "name": "Organic Apples",
+            "price": 2.5,
+            "quantity": "bushels"
+          },
+          {
+            "name": "Heirloom Tomatoes",
+            "price": 3.0,
+            "quantity": "pounds"
+          }
+        ],
+        "location": "Green Valley",
+        "specialty": "Certified Organic Farming"
+      },
+      {
+        "name": "Oliver Sunflower",
+        "products": [
+          {
+            "name": "Sunflower Honey",
+            "price": 5.0,
+            "quantity": "jars"
+          },
+          {
+            "name": "Pumpkins",
+            "price": 4.0,
+            "quantity": "each"
+          }
+        ],
+        "location": "Sunny Acres",
+        "specialty": "Beekeeping and Pumpkins"
+      },
+      {
+        "name": "Grace Vineyard",
+        "products": [
+          {
+            "name": "Chardonnay Grapes",
+            "price": 8.0,
+            "quantity": "crates"
+          },
+          {
+            "name": "Merlot Grapes",
+            "price": 7.5,
+            "quantity": "crates"
+          }
+        ],
+        "location": "Vineyard Hills",
+        "specialty": "Premium Wine Grapes"
+      },
+      {
+        "name": "Sammy Greensmith",
+        "products": [
+          {
+            "name": "Organic Spinach",
+            "price": 2.0,
+            "quantity": "bundles"
+          },
+          {
+            "name": "Kale",
+            "price": 1.5,
+            "quantity": "bunches"
+          }
+        ],
+        "location": "Greenside Farm",
+        "specialty": "Fresh Leafy Greens"
+      },
+      {
+        "name": "Miguel Citrus",
+        "products": [
+          {
+            "name": "Oranges",
+            "price": 4.0,
+            "quantity": "dozens"
+          },
+          {
+            "name": "Lemons",
+            "price": 3.5,
+            "quantity": "dozens"
+          }
+        ],
+        "location": "Citrus Grove",
+        "specialty": "Citrus Fruits"
+      },
+      {
+        "name": "Isabella Blossom",
+        "products": [
+          {
+            "name": "Rose Bouquets",
+            "price": 6.0,
+            "quantity": "bouquets"
+          },
+          {
+            "name": "Lavender",
+            "price": 2.5,
+            "quantity": "bundles"
+          }
+        ],
+        "location": "Floral Fields",
+        "specialty": "Artisan Flower Arrangements"
+      }
+    ]
+  }
