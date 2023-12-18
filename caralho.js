@@ -55,7 +55,7 @@ var vm = function () {
         ],
         "location": "Green Valley",
         "specialty": "Agricultura Orgânica Certificada",
-        "approved": "aprovado"
+        "approved": "https://th.bing.com/th/id/R.4bb4f2b14b7bc54682348a91c7777282?rik=DeGKDEkJNgW75A&riu=http%3a%2f%2fst.depositphotos.com%2f2274151%2f2585%2fi%2f950%2fdepositphotos_25850941-stock-photo-approved-stamp.jpg&ehk=Nl%2fMN4v69fnsn2CDrqltq4bSF312xWXnUmd2UbuL%2fxw%3d&risl=&pid=ImgRaw&r=0"
       },
       {
         "name": "Oliver Sunflower",
@@ -89,7 +89,7 @@ var vm = function () {
         ],
         "location": "Sunny Acres",
         "specialty": "Apicultura e Abóboras",
-        "approved": "aprovado"
+        "approved": "https://th.bing.com/th/id/R.4bb4f2b14b7bc54682348a91c7777282?rik=DeGKDEkJNgW75A&riu=http%3a%2f%2fst.depositphotos.com%2f2274151%2f2585%2fi%2f950%2fdepositphotos_25850941-stock-photo-approved-stamp.jpg&ehk=Nl%2fMN4v69fnsn2CDrqltq4bSF312xWXnUmd2UbuL%2fxw%3d&risl=&pid=ImgRaw&r=0"
       },
       {
         "name": "Grace Vineyard",
@@ -123,7 +123,7 @@ var vm = function () {
         ],
         "location": "Vineyard Hills",
         "specialty": "Uvas de Vinho Premium",
-        "approved": "aprovado"
+        "approved": "https://th.bing.com/th/id/R.4bb4f2b14b7bc54682348a91c7777282?rik=DeGKDEkJNgW75A&riu=http%3a%2f%2fst.depositphotos.com%2f2274151%2f2585%2fi%2f950%2fdepositphotos_25850941-stock-photo-approved-stamp.jpg&ehk=Nl%2fMN4v69fnsn2CDrqltq4bSF312xWXnUmd2UbuL%2fxw%3d&risl=&pid=ImgRaw&r=0"
       },
       {
         "name": "Sammy Greensmith",
@@ -157,7 +157,7 @@ var vm = function () {
         ],
         "location": "Greenside Farm",
         "specialty": "Folhas Verdes Frescas",
-        "approved": "não aprovado"
+        "approved": "https://th.bing.com/th/id/R.4bb4f2b14b7bc54682348a91c7777282?rik=DeGKDEkJNgW75A&riu=http%3a%2f%2fst.depositphotos.com%2f2274151%2f2585%2fi%2f950%2fdepositphotos_25850941-stock-photo-approved-stamp.jpg&ehk=Nl%2fMN4v69fnsn2CDrqltq4bSF312xWXnUmd2UbuL%2fxw%3d&risl=&pid=ImgRaw&r=0"
       },
       {
         "name": "Miguel Citrus",
@@ -191,7 +191,7 @@ var vm = function () {
         ],
         "location": "Citrus Grove",
         "specialty": "Frutas Cítricas",
-        "approved": "aprovado"
+        "approved": "https://th.bing.com/th/id/R.4bb4f2b14b7bc54682348a91c7777282?rik=DeGKDEkJNgW75A&riu=http%3a%2f%2fst.depositphotos.com%2f2274151%2f2585%2fi%2f950%2fdepositphotos_25850941-stock-photo-approved-stamp.jpg&ehk=Nl%2fMN4v69fnsn2CDrqltq4bSF312xWXnUmd2UbuL%2fxw%3d&risl=&pid=ImgRaw&r=0"
       },
       {
         "name": "Isabella Blossom",
@@ -225,7 +225,7 @@ var vm = function () {
         ],
         "location": "Floral Fields",
         "specialty": "Arranjos Florais Artesanais",
-        "approved": "aprovado"
+        "approved": "https://th.bing.com/th/id/R.4bb4f2b14b7bc54682348a91c7777282?rik=DeGKDEkJNgW75A&riu=http%3a%2f%2fst.depositphotos.com%2f2274151%2f2585%2fi%2f950%2fdepositphotos_25850941-stock-photo-approved-stamp.jpg&ehk=Nl%2fMN4v69fnsn2CDrqltq4bSF312xWXnUmd2UbuL%2fxw%3d&risl=&pid=ImgRaw&r=0"
       }
     ];
 
