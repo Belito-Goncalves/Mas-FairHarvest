@@ -16,6 +16,8 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>ITW 2023/24 - NBA Players List</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,41 +27,118 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" type="text/css" href="FH.css">
     </head>
+    <style>
+        body {
+            padding-top: 56px; /* Ajusta a altura da barra de navegação no topo */
+        }
+    
+        .navbar {
+            height: 56px; /* Ajusta a altura da barra de navegação no topo */
+        }
+    
+        .navbar.fixed-bottom {
+            height: 80px; /* Ajusta a altura da barra de navegação fixa na parte inferior */
+        }
+    
+        .card-content {
+            text-align: center;
+        }
+    
+        /* Adicione estilos adicionais conforme necessário... */
+    </style>
     <body>
-        <nav class="col-12 navbar navbar-expand-lg navbar-dark azul fixed-top">
+        <nav class="col-12 navbar navbar-expand-lg navbar-dark verde fixed-top">
             <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="display: flex; align-items: center;">
                     <i class="fa fa-tree mx-auto" aria-hidden="true" style="color: black; font-size: 40px;"></i>
                     <span class="mx-auto"><h2><b>FAIRHARVEST</b></h2></span>
                 </div>
-        
+                
+                <i data-bind="click: function() { currentLayout('layout1') }"class="fa fa-arrow-left" aria-hidden="true"></i>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="forms">
+                    <div class="d-inline-flex mt-0" id="forms" style="width: 365px; height: 50px;">
+                        <input id="searchbar" class="form-control searchBar autocomplete" type="text" placeholder="Search" aria-label="Search">
+                        <button data-bind="click: function() { currentLayout('layout2'); clearSearchBar(); }" style="margin-left: 5px;" class="fa fa-search btn btn-default" id="lupadef" type="submit"></button>
+                    </div>
+                </div>
+
                 
             </div>
         </nav>
-        <main style="margin-top: 100px;">
+        <main>
             
-            <div id="pedidos-container">
-                <h2>Novos Pedidos</h2>
-                <ul id="lista-pedidos"></ul>
+            <div class="col-12" style="height: 100px;">
+                <div class="col-12" style="height: 50px;">
+                
+                </div>
             </div>
+
+            
+
+                <div data-bind="foreach: farmers" style="margin-bottom:40px">
+                     <!-- ko if: $data.name === 'Eva Greenfield' -->
+                    <div class="col-4">
+                        
+                        <div><img  data-bind="attr: { src: photo }" alt="" style="width: 300px; height: 150px;padding-left:40px"></div>
+                        <div class="card-content btn-bottom" style="float: left;padding-left:100px"><h2 data-bind="text: name"></h2></div>
+                    </div>
+                   
+                    <!-- /ko -->
+                </div>
+
+                <div class="col-12" style="height: 600px;">
+                    <div class="album py-5 bg-body-tertiary col-12 mx-auto">
+                        <div class="container">
+                            <div class="row">
+                                <!-- Iniciar o loop dos produtos -->
+                                <!-- ko foreach: all_products -->
+                                <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+                                    <div class="card">
+                                        <!-- Se o nome for 'Batatas' -->
+                                        <!-- ko if: $data.name === 'Batatas' -->
+                                        <div class="card-content" data-bind="text: name"></div>
+                                        <div><img data-bind="attr: { src: link }" alt="" style="width: 100%; height: 100px;"></div>
+                                        <!-- /ko -->
+                
+                                        <!-- Se o nome não for 'Batatas' -->
+                                        <!-- ko ifnot: $data.name === 'Batatas' -->
+                                        <div><img data-bind="attr: { src: link }" alt="" style="width: 100px; height: 100px;"></div>
+                                        <div class="card-content" data-bind="text: name"></div>
+                                        <!-- /ko -->
+                                    </div>
+                                </div>
+                                <!-- /ko -->
+                                <!-- Finalizar o loop dos produtos -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            
+            
+            
+            
+
+            <div class="col-12" style="height: 300px">
+            
+            </div>
+
+            
         </main>
-        <nav class="navbar fixed-bottom azul" style="height: 80px">
+        <nav class="navbar fixed-bottom verde" style="height: 80px">
             <div class="container-fluid col-lg-4 col-md-4 col-sm-12">
                 <ul class="navbar-nav me-auto mb-0 mb-lg-0 flex-row justify-content-center" style="width: 100%;">
-                    <li class="row nav-item ml-5 mr-5 mx-auto">
-                        <a href="agricultor.html"> <i class="fa fa-shopping-bag" aria-hidden="true" style="color: white; font-size: 40px;"></i></a>
-                        <span class="d-none d-sm-block"><h3>Pedidos</h3></span>
+                    <li class="row nav-item mr-5 mx-auto">
+                        <a href="index.html"><i class="fa fa-home" aria-hidden="true" style="color: white; font-size: 40px;"></i></a>
+                        <span class="d-none d-sm-block"><h3>Inicio</h3></span>
                     </li>
                     <li class="row nav-item ml-5 mr-5 mx-auto">
-                        <a href="listar.html"> <i class="fa fa-plus" aria-hidden="true" style="color: white; font-size: 40px;"></i></a>
-                        <span class="d-none d-sm-block"><h3>Adicionar</h3></span>
+                        <a href="cards.html"><i class="fa fa-search" aria-hidden="true" style="color: white; font-size: 40px;"></i></a>
+                        <span class="d-none d-sm-block"><h3>Pesquisa</h3></span>
                     </li>
-                    <li class="row nav-item ml-5 mr-5 mx-auto">
-                        <a href="novoproduto.html"> <i class="fa fa-user-circle-o" aria-hidden="true" style="color: white; font-size: 40px;"></i></a>
-                        <span class="d-none d-sm-block"><h3>Perfil</h3></span>
-                    </li>
-                    <li class="row nav-item ml-5 mr-5 mx-auto">
-                        <a href="cabaz.html"> <i class="fa fa-tree" aria-hidden="true" style="color: white; font-size: 40px;"></i></a>
+                    <li class="row nav-item  mr-5 mx-auto">
+                        <i class="fa fa-user-circle-o" aria-hidden="true" style="color: white; font-size: 40px;"></i>
                         <span class="d-none d-sm-block"><h3>Perfil</h3></span>
                     </li>
                 </ul>
@@ -72,6 +151,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
+<<<<<<< HEAD
+    <script src="agricultor.js"></script>
+
+=======
     <script src="caralho.js"></script>
   </body>
   
@@ -104,7 +187,13 @@
         listaPedidos.appendChild(novoPedido);
     }
 });
+>>>>>>> 3fe5671e9d6353bc499deb3cdf650c6402adcd2a
     
-    </script>
-<script src="mudarpedido.js"></script>
+ <script>
+    function clearSearchBar() {
+        document.getElementById('searchbar').value = '';
+    }
+</script>
+
+  </body>
 </html>
