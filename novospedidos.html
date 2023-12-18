@@ -36,24 +36,13 @@
                 
             </div>
         </nav>
-       
-        <div class="container mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 class="text-center">Cabazes Pendentes</h2>
-                        </div>
-                        <div class="card-body">
-                            <div class="alert alert-info" role="alert">
-                                <h3>Tens 27 cabazes pendentes.</h3>
-                                <p>Eles são compostos por: 1 saquinho de batatas, 5 tomates, 3 cebolas, 1 alho francês para entregar até segunda.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <main style="margin-top: 100px;">
+            
+            <div id="pedidos-container">
+                <h2>Novos Pedidos</h2>
+                <ul id="lista-pedidos"></ul>
             </div>
-        </div>
+        </main>
         <nav class="navbar fixed-bottom azul" style="height: 80px">
             <div class="container-fluid col-lg-4 col-md-4 col-sm-12">
                 <ul class="navbar-nav me-auto mb-0 mb-lg-0 flex-row justify-content-center" style="width: 100%;">
@@ -86,4 +75,45 @@
     <script src="caralho.js"></script>
   </body>
   
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Verifique se há detalhes do pedido armazenados localmente
+    var pedidoDetalhes = localStorage.getItem("pedidoDetalhes");
+
+    // Se houver detalhes do pedido, exiba-os na página
+    if (pedidoDetalhes) {
+        // Limpe os detalhes do pedido armazenados localmente
+        localStorage.removeItem("pedidoDetalhes");
+
+        // Adicione o pedido à lista de pedidos com um botão "Entregar Pedido"
+        var listaPedidos = document.getElementById("lista-pedidos");
+        var novoPedido = document.createElement("li");
+        novoPedido.textContent = pedidoDetalhes;
+
+        // Adicione o botão "Entregar Pedido" ao pedido
+        var botaoEntregarPedido = document.createElement("button");
+        botaoEntregarPedido.textContent = "Entregar Pedido";
+        botaoEntregarPedido.addEventListener("click", function() {
+            // Adicione aqui a lógica para marcar o pedido como entregue
+            // Por exemplo, atualizar o texto no index.html
+            var totalPedidosElement = document.getElementById("total-pedidos");
+            if (totalPedidosElement) {
+                // Atualiza o texto para "Pedido Entregue"
+                totalPedidosElement.textContent = "Pedido Entregue";
+
+                // Log temporário para verificar se a função está sendo acionada
+                console.log("Botão Entregar Pedido clicado");
+
+                // Redireciona para a página index2.html
+                window.location.href = "index2.html";
+            }
+        });
+
+        novoPedido.appendChild(botaoEntregarPedido);
+        listaPedidos.appendChild(novoPedido);
+    }
+});
+    
+    </script>
+<script src="mudarpedido.js"></script>
 </html>
