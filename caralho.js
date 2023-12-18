@@ -24,7 +24,7 @@ var vm = function () {
     // Replace this data with your actual farmer data
     self.farmers = [
       {
-        "name": "Eva Greenfield",
+        "name": "Jorge",
         "photo": "https://img.freepik.com/premium-photo/agriculture-farmer-background_519183-4463.jpg",
         "products": [
           {
