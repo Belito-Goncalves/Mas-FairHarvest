@@ -36,12 +36,12 @@
                 
             </div>
         </nav>
-        <main>
-            <div id="semPedidosDiv" class=" card col-lg-4 col-md-6 col-sm-12 mt-2">
-                <p>Ainda não tem nenhum pedido</p>
-            </div>
-        </div>
+        <main style="margin-top: 100px;">
             
+            <div id="pedidos-container">
+                <h2>Novos Pedidos</h2>
+                <ul id="lista-pedidos"></ul>
+            </div>
         </main>
         <nav class="navbar fixed-bottom azul" style="height: 80px">
             <div class="container-fluid col-lg-4 col-md-4 col-sm-12">
@@ -74,29 +74,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
     <script src="caralho.js"></script>
   </body>
-  <script>
-    // Função para simular se o agricultor tem pedidos
-    function verificarPedidos() {
-        // Aqui você colocará a lógica real para verificar se há pedidos para o agricultor
-        // Por enquanto, estamos simulando que há pedidos
-        var agricultorTemPedidos = true;
-
-        // Seleciona as divs de pedidos e sem pedidos
-        var pedidosDiv = document.getElementById('pedidosDiv');
-        var semPedidosDiv = document.getElementById('semPedidosDiv');
-
-        if (agricultorTemPedidos) {
-            // Se houver pedidos, exibe a div de pedidos e esconde a div sem pedidos
-            pedidosDiv.style.display = 'block';
-            semPedidosDiv.style.display = 'none';
-        } else {
-            // Se não houver pedidos, exibe a div sem pedidos e esconde a div de pedidos
-            pedidosDiv.style.display = 'none';
-            semPedidosDiv.style.display = 'block';
+  
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Verifique se há detalhes do pedido armazenados localmente
+        var pedidoDetalhes = localStorage.getItem("pedidoDetalhes");
+    
+        // Se houver detalhes do pedido, exiba-os na página
+        if (pedidoDetalhes) {
+            // Limpe os detalhes do pedido armazenados localmente
+            localStorage.removeItem("pedidoDetalhes");
+    
+            // Adicione o pedido à lista de pedidos
+            var listaPedidos = document.getElementById("lista-pedidos");
+            var novoPedido = document.createElement("li");
+            novoPedido.textContent = pedidoDetalhes;
+            listaPedidos.appendChild(novoPedido);
         }
-    }
-
-    // Chamada à função quando o botão for clicado
-    document.getElementById('fazerPedidoBtn').addEventListener('click', verificarPedidos);
-</script>
+    });
+    </script>
+<script src="mudarpedido.js"></script>
 </html>
