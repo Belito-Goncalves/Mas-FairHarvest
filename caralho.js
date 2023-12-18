@@ -2,6 +2,7 @@ var vm = function () {
     var self = this;
     self.farmers = ko.observableArray([]);
     self.uniqueProducts = ko.observableArray([]);
+    self.currentLayout = ko.observable('layout1');
     self.all_products = ko.observableArray([
       {"name": "Maçãs", "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/280px-Red_Apple.jpg"},
       {"name": "Tomates", "link": "https://tomatesdooeste.pt/images/tomate2.png"},
@@ -227,27 +228,6 @@ var vm = function () {
         "approved": "aprovado"
       }
     ];
-      
-
-    self.search = ko.observable('');
-
-    self.filteredFarmers = ko.computed(function () {
-        var searchTerm = self.search().toLowerCase().trim();
-
-        if (!searchTerm) {
-            return self.farmers;
-        }
-
-        return self.farmers.filter(function (farmer) {
-            // Filter farmers based on the search term
-            var farmerName = farmer.name.toLowerCase();
-            var products = farmer.products.map(function (product) {
-                return product.name.toLowerCase();
-            });
-
-            return farmerName.includes(searchTerm) || products.includes(searchTerm);
-        });
-    });
 
 
     console.log("Farmers Data:", self.farmers);
@@ -276,6 +256,11 @@ var vm = function () {
 
     // Other functions and properties...
 };
+
+
+var viewModel = new vm();
+viewModel.currentLayout = ko.observable('layout1');
+
 
 // Apply bindings when the document is ready
 $(document).ready(function () {
