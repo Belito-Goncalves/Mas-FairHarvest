@@ -1,0 +1,175 @@
+
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <style>
+            body {
+                padding-top: 56px; /* Ajusta a altura da barra de navegação no topo */
+            }
+        
+            .navbar {
+                height: 56px; /* Ajusta a altura da barra de navegação no topo */
+            }
+        
+            .navbar.fixed-bottom {
+                height: 80px; /* Ajusta a altura da barra de navegação fixa na parte inferior */
+            }
+        
+            .card-content {
+                text-align: center;
+            }
+        
+            /* Adicione estilos adicionais conforme necessário... */
+        </style>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>ITW 2023/24 - NBA Players List</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" type="text/css" href="FH.css">
+    </head>
+    <nav class="col-12 navbar navbar-expand-lg navbar-dark azul fixed-top">
+        <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="display: flex; align-items: center;">
+                <i class="fa fa-tree mx-auto" aria-hidden="true" style="color: black; font-size: 40px;"></i>
+                <span class="mx-auto"><h2><b>FAIRHARVEST</b></h2></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">Adicionar Produto</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- Formulário para adicionar um produto -->
+                        <form id="produtoForm">
+                            <div class="form-group">
+                                <label for="nomeProduto">Nome do Produto:</label>
+                                <input type="text" class="form-control" id="nomeProduto" name="nomeProduto" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="imagemProduto">URL da Imagem:</label>
+                                <input type="text" class="form-control" id="imagemProduto" name="imagemProduto" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantidadeProduto">Quantidade:</label>
+                                <input type="number" class="form-control" id="quantidadeProduto" name="quantidadeProduto" required>
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="adicionarProduto()">Adicionar Produto</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar fixed-bottom azul" style="height: 80px">
+            <div class="container-fluid col-lg-4 col-md-4 col-sm-12">
+                <ul class="navbar-nav me-auto mb-0 mb-lg-0 flex-row justify-content-center" style="width: 100%;">
+                  
+                    <li class="row nav-item ml-5 mr-5 mx-auto">
+                        <a href="agricultor.html"> <i class="fa fa-shopping-bag" aria-hidden="true" style="color: white; font-size: 40px;"></i></a>
+                        <span class="d-none d-sm-block"><h3>Pedidos</h3></span>
+                    </li>
+                    <li class="row nav-item ml-5 mr-5 mx-auto">
+                        <a href="listar.html"> <i class="fa fa-plus" aria-hidden="true" style="color: white; font-size: 40px;"></i></a>
+                        <span class="d-none d-sm-block"><h3>Adicionar</h3></span>
+                    </li>
+                    <li class="row nav-item ml-5 mr-5 mx-auto">
+                        <a href="novoproduto.html"> <i class="fa fa-user-circle-o" aria-hidden="true" style="color: white; font-size: 40px;"></i></a>
+                        <span class="d-none d-sm-block"><h3>Perfil</h3></span>
+                    </li>
+                    <li class="row nav-item ml-5 mr-5 mx-auto">
+                        <a href="cabaz.html"> <i class="fa fa-tree" aria-hidden="true" style="color: white; font-size: 40px;"></i></a>
+                        <span class="d-none d-sm-block"><h3>Perfil</h3></span>
+                    </li>
+                   
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Container para os cards dos produtos -->
+        <div id="cardsContainer" class="row mt-5"></div>
+        
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+        // Função para adicionar um novo produto
+        function adicionarProduto() {
+            // Obter valores do formulário
+            var nomeProduto = document.getElementById("nomeProduto").value;
+            var imagemProduto = document.getElementById("imagemProduto").value;
+            var quantidadeProduto = document.getElementById("quantidadeProduto").value;
+
+            // Validar se os campos não estão vazios
+            if (nomeProduto.trim() === "" || imagemProduto.trim() === "" || quantidadeProduto.trim() === "") {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            // Criar um objeto representando o produto
+            var novoProduto = {
+                name: nomeProduto,
+                link: imagemProduto,
+                quantidade: quantidadeProduto
+            };
+
+            // Adicionar o produto ao localStorage
+            var produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+            produtos.push(novoProduto);
+            localStorage.setItem('produtos', JSON.stringify(produtos));
+
+            // Adicionar o card do produto ao HTML
+            adicionarCardProduto(novoProduto);
+
+            // Limpar os campos do formulário
+            document.getElementById("nomeProduto").value = "";
+            document.getElementById("imagemProduto").value = "";
+            document.getElementById("quantidadeProduto").value = "";
+        }
+
+        // Função para adicionar o card do produto ao HTML
+        function adicionarCardProduto(produto) {
+            // Container para os cards dos produtos
+            var cardsContainer = document.getElementById('cardsContainer');
+
+            // Criar um novo elemento de card
+            var cardDiv = document.createElement('div');
+            cardDiv.className = 'col mb-4';
+            cardDiv.innerHTML = `
+                <div class="card">
+                    <img src="${produto.link}" class="card-img-top" alt="Imagem do Produto">
+                    <div class="card-body">
+                        <h5 class="card-title">${produto.name}</h5>
+                        <p class="card-text">Quantidade: ${produto.quantidade}</p>
+                    </div>
+                </div>
+            `;
+
+            // Adicionar o card ao container
+            cardsContainer.appendChild(cardDiv);
+        }
+
+        // Carregar os produtos salvos no localStorage ao carregar a página
+        document.addEventListener('DOMContentLoaded', function () {
+            var produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+            produtos.forEach(function (produto) {
+                adicionarCardProduto(produto);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -6,6 +6,9 @@ body {
 .verde {
     background-color: rgb(53, 197, 53);
 }
+.azul {
+    background-color: rgb(116, 96, 241);
+}
 
 .foto{
     height: 230px
