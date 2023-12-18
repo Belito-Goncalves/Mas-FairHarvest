@@ -53,39 +53,33 @@
                     <i class="fa fa-tree mx-auto" aria-hidden="true" style="color: black; font-size: 40px;"></i>
                     <span class="mx-auto"><h2><b>FAIRHARVEST</b></h2></span>
                 </div>
-        
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="forms">
-                    <div class="d-inline-flex mt-0" id="forms" style="width: 365px ; height: 50px;">
-                        <input id="searchbar" class="form-control searchBar autocomplete" type="text" placeholder="Search" aria-label="Search" onclick="search2()">
-                        <button style="margin-left: 5px;" class="fa fa-search btn btn-default" id="lupadef" type="submit" onclick="search()"></button>
+                
+                <i data-bind="click: function() { currentLayout('layout1') }"class="fa fa-arrow-left" aria-hidden="true"></i>
 
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="forms">
+                    <div class="d-inline-flex mt-0" id="forms" style="width: 365px; height: 50px;">
+                        <input id="searchbar" class="form-control searchBar autocomplete" type="text" placeholder="Search" aria-label="Search">
+                        <button data-bind="click: function() { currentLayout('layout2'); clearSearchBar(); }" style="margin-left: 5px;" class="fa fa-search btn btn-default" id="lupadef" type="submit"></button>
                     </div>
                 </div>
+
+                
             </div>
         </nav>
         <main>
             
             <div class="col-12" style="height: 100px;">
+                <div class="col-12" style="height: 50px;">
                 
+                </div>
             </div>
 
-            <div class="col-12" style="height: 600px; overflow-y: auto;">
-                <div class="album py-5 bg-body-tertiary col-12 mx-auto">
-                    <div class="container">
-                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" data-bind="foreach: all_products">
-                            <div class="col mb-4"> 
-                               <img data-bind="attr: { src: link }" alt="" style="width: 100px; height: 100px;">
-                               <div class="card-content" data-bind="text: name"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-             </div>
+            <div data-bind="template: currentLayout"></div>
             
             
             
 
-            <div class="col-12" style="height: 50px">
+            <div class="col-12" style="height: 300px">
             
             </div>
 
@@ -117,5 +111,78 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
     <script src="caralho.js"></script>
+
+    <script type="text/html" id="layout1">
+        <div class="col-12" style="height: 600px;">
+            <div class="album py-5 bg-body-tertiary col-12 mx-auto">
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" data-bind="foreach: all_products">
+                        <div class="col mb-4"> 
+                        <!-- ko if: $data.name === 'Batatas' -->
+                           <img  data-bind="attr: { src: link }" alt="" style="width: 100px; height: 100px;">
+
+                           <div class="card-content" data-bind="text: name"></div>
+                        <!-- /ko -->
+
+                        <!-- ko ifnot: $data.name === 'Batatas' -->
+                           <img data-bind="attr: { src: link }" alt="" style="width: 100px; height: 100px;">
+                           
+                           <div class="card-content" data-bind="text: name"></div>
+                        <!-- /ko -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/html" id="layout2">
+        <div class="col-12" style="height: 600px;">
+            
+            <div data-bind="foreach: all_products">
+                <!-- ko if: $data.name === 'Batatas' -->
+                <div class="col-4" >
+                    
+                    <img  data-bind="attr: { src: link }" alt="" style="width: 150px; height: 150px;">
+                    <div class="card-content btn-bottom" style="float: left;"><h2 data-bind="text: name"></h2></div>
+                </div>
+               
+                <!-- /ko -->
+            </div>
+            
+            <table class="table table-striped table-sm small" style="margin-top: 20px;overflow-y: auto;">
+                <thead class="table-secondary">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Area</th>
+                        <th scope="col" class="text-right"></th>
+                        <th scope="col" class="text-right"></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: farmers" >
+                    <tr>
+                        <td class="align-middle" data-bind="text: name"></td>
+                        <td class="align-middle" data-bind="text: location"></td>
+                        <td class="align-middle">
+                            <div class="card" style="height: 90px; width: 90px;">
+                                <a>
+                                    <img class="card-img-top mx-auto" data-bind="attr: { src: photo}" style="object-fit: cover; height: 80px; width: 100%;" />
+                                </a>
+                            </div>
+                        </td>
+                        <td class="text-end">
+                            <a href="agridoce.html" class="btn btn-default btn-light btn-xs"><i class="fa fa-eye" title="Show details"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+ </script>
+ <script>
+    function clearSearchBar() {
+        document.getElementById('searchbar').value = '';
+    }
+</script>
+
   </body>
 </html>
